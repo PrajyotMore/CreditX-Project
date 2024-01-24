@@ -1,0 +1,22 @@
+.secondary_button{
+    background: #000;
+    color: #fff;
+    border-radius: 0;
+    display: inline-flex;
+    align-items: center;
+}
+.mobile_flex {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+@media (max-width:425px) {
+    .mobile_flex {
+        flex-direction: column;
+        justify-content: flex-start;
+      }
+    .secondary_button{
+        justify-content: flex-start;
+    }
+    .text_div{margin-bottom: 8px;}
+}

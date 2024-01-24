@@ -1,0 +1,31 @@
+.joinclub .ant-table-wrapper .ant-table-container table>thead>tr:first-child >*:first-child {
+    border-start-start-radius: 0px;
+}
+.joinclub .ant-table-wrapper .ant-table-container table>thead>tr:first-child >*:last-child {
+    border-start-end-radius: 0px;
+}
+.joinclub .ant-table-wrapper .ant-table-thead >tr>td{
+    border-bottom: none;
+}
+.joinclub .ant-table-wrapper .ant-table-tbody >tr >td{
+    border-bottom: none;
+}
+.joinclub .ant-table-wrapper .ant-table-thead>tr>th{
+    padding: 8px 16px;
+    border-bottom: 0;
+    background: #ebebeb;
+    font-weight: 700;
+    text-transform: capitalize;
+}
+.joinclub .ant-table-wrapper .ant-table-thead >tr>th:not(:last-child):not(.ant-table-selection-column):not(.ant-table-row-expand-icon-cell):not([colspan])::before {
+    width: 0;
+    position: unset;
+  }
+.joinclub .ant-card-body{padding: 5px;}
+.joinclub .secondary_button{
+    background: #000;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 0;
+}

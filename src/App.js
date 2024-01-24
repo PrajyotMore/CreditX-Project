@@ -39,21 +39,29 @@ const Myapplication = React.lazy(() =>
 const ForToday = React.lazy(() => import("./pages/myApplicaation/ForToday"));
 const CreateTask = React.lazy(() => import("./pages/actions/CreateTask"));
 const SdWidget = React.lazy(() => import("./pages/widget/Sdwidget"));
-const DashboardWidget = React.lazy(() =>
-  import("./pages/dashboardWidgets/DashboardWidget")
+// const DashboardWidget = React.lazy(() =>
+//   import("./pages/dashboardWidgets/DashboardWidget")
+// );
+const CreditxDashboard = React.lazy(() =>
+  import("./pages/creditxDashboard/CreditxDashboard.js")
 );
 
 const TabsWithoutBtn = React.lazy(() => import("./pages/tabs/TabsWithoutBtn"));
-const ApplicationListing = React.lazy(() =>
-  import("./pages/reward-corner/ApplicationListing")
-);
+// const MasterContest = React.lazy(() =>
+//   import("./pages/reward-corner/MasterContest")
+// );
 const Open = React.lazy(() => import("./pages/myApplicaation/Open"));
 const MasterContestActive = React.lazy(() =>
-  import("./pages/reward-corner/MasterContestActive")
+  import("./pages/reward-corner/MasterContestActive.js")
 );
 const MasterContestCompleted = React.lazy(() =>
   import("./pages/reward-corner/MasterContestCompleted")
 );
+
+const ApplicationListing = React.lazy(() =>
+  import("./pages/reward-corner/ApplicationListing")
+);
+
 function App() {
   return (
     <AppLayout>
@@ -72,13 +80,16 @@ function App() {
         </Routes>
         <div className="body_content">
           <Routes>
-            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/" element={<Login />} />
           </Routes>
-          <Routes>
+          {/* <Routes>
             <Route path="/" element={<SdWidget />} />
-          </Routes>
-          <Routes>
+          </Routes> */}
+          {/* <Routes>
             <Route path="/dashboard_widgets" element={<DashboardWidget />} />
+          </Routes> */}
+          <Routes>
+            <Route path="/home" element={<CreditxDashboard />} />
           </Routes>
           <Routes>
             <Route path="/my-application" element={<Myapplication />} />
@@ -99,11 +110,17 @@ function App() {
             <Route path="/action" element={<CreateTask />} />
           </Routes>
           <Routes>
-            <Route path="/normal-tabs" element={<TabsWithoutBtn />} />
+            <Route
+              path="/application-listing"
+              element={<ApplicationListing />}
+            />
           </Routes>
           <Routes>
-            <Route path="/application-listing" element={<ApplicationListing />} />
+            <Route path="/normal-tabs" element={<TabsWithoutBtn />} />
           </Routes>
+          {/* <Routes>
+            <Route path="/mastercontest" element={<MasterContest />} />
+          </Routes> */}
           <Routes>
             <Route
               path="/mastercontest/active"

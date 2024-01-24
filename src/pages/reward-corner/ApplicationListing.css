@@ -168,7 +168,7 @@ color: #003399;
         right: 10px;
         border-radius: 16px;
         padding: 4px 10px;
-
+        font-weight: 600;
     }
     .button{
         max-width: 100%;
@@ -181,6 +181,7 @@ color: #003399;
         right: 10px;
         border-radius: 16px;
         padding: 4px 10px;
+        font-weight: 600;
 
     }
     .button{

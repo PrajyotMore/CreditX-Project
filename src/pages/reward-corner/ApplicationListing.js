@@ -85,44 +85,51 @@ const MasterContest = () => {
                   </div>
                   <div className="application-info">
                     <Row gutter={[16, { xs: 16, sm: 10, md: 16, lg: 16 }]} style={{width:'100%'}}>
-                      <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+                      <Col xs={12} sm={12} md={8} lg={8} xl={8}>
                         <div className="col1">
                           <div>
                             <div className="title1">20,00,000</div>
                             <div className="title2">Loan Amount</div>
                           </div>
-
-                          <div>
-                            <div className="title1">45012</div>
-                            <div className="title2">EMI</div>
-                          </div>
                         </div>
                       </Col>
-                      <Col xs={8} sm={8} md={8} lg={8} xl={8}>
-                        <div className="col1">
-                          <div>
-                            <div className="title1">12 Months</div>
-                            <div className="title2">Tenure</div>
-                          </div>
-
-                          <div>
-                            <div className="title1">Dadar</div>
-                            <div className="title2">Location</div>
-                          </div>
+                      <Col xs={12} sm={12} md={8} lg={8} xl={8}>
+                      <div className="col1">
+                        <div>
+                          <div className="title1">12 Months</div>
+                          <div className="title2">Tenure</div>
                         </div>
-                      </Col>
-                      <Col xs={8} sm={8} md={8} lg={8} xl={8}>
+                      </div>
+                    </Col>
+                    <Col xs={12} sm={12} md={8} lg={8} xl={8}>
                         <div className="col1">
                           <div>
                             <div className="title1">Home Loan</div>
                             <div className="title2">Purpose of Loan</div>
                           </div>
 
-                          <div>
+                          
+                        </div>
+                      </Col>
+                      <Col xs={12} sm={12} md={8} lg={8} xl={8}>
+                      <div>
+                            <div className="title1">45012</div>
+                            <div className="title2">EMI</div>
+                          </div>
+                      </Col>
+                     
+                      <Col xs={12} sm={12} md={8} lg={8} xl={8}>
+                      <div>
+                            <div className="title1">Dadar</div>
+                            <div className="title2">Location</div>
+                          </div>
+                      </Col>
+                      
+                      <Col xs={12} sm={12} md={8} lg={8} xl={8}>
+                      <div>
                             <div className="title1">12/06/24</div>
                             <div className="title2">Application Date</div>
                           </div>
-                        </div>
                       </Col>
                     </Row>
                   </div>

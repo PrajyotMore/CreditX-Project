@@ -174,7 +174,7 @@ const TabsComp = ({ tabMenu, header, activeKey, handler, showBreadCrum }) => {
         style={{
           display: "flex",
           flexDirection: "column",
-          // marginTop: 5,
+          marginTop: -14,
         }}
       >
         {/* <div className="mb-3"> */}

@@ -1,5 +1,5 @@
+import React, { useEffect, useState } from "react";
 import { Button, Card, Col, DatePicker, Row } from "antd";
-import React from "react";
 import "./creditxDashboard.css";
 import SdWidgetCom from "../widget/SdWidgetCom";
 import note from "../../assets/image/note.png";
@@ -10,12 +10,33 @@ import tasksquare from "../../assets/image/task-square.png";
 import noteFav from "../../assets/image/note-favorite.png";
 import resource from "../../assets/image/task-square.png";
 import TodoListItem from "../creditxComponents/TodoListItem/TodoListItem";
+import moment from "moment";
 import {
   CalendarOutlined,
   LeftOutlined,
   RightOutlined,
 } from "@ant-design/icons";
 const CreditxDashboard = () => {
+  const [currentDate, setCurrentDate] = useState(moment());
+
+  const [startDate, setStartDate] = useState(moment().startOf("week"));
+
+  // Create an array to hold the days of the week
+  const daysOfWeek = [];
+  // Loop through each day of the week and push it to the array
+  for (let i = 0; i < 7; i++) {
+    const day = moment(startDate).add(i, "days");
+    daysOfWeek.push(day);
+  }
+
+  const handleNextWeek = () => {
+    setStartDate(moment(startDate).add(7, "days")); // Add 7 days to move to the next week
+  };
+
+  const handlePrevWeek = () => {
+    setStartDate(moment(startDate).subtract(7, "days")); // Subtract 7 days to move to the previous week
+  };
+
   return (
     <>
       <div className="top_header_dashboard">
@@ -44,6 +65,7 @@ const CreditxDashboard = () => {
                   title_header="Loan Application"
                   count={220}
                   headerImgSrc={note}
+                  toRoute="/application-listing"
                 >
                   <div
                     className="claims_body hScroll "
@@ -257,7 +279,10 @@ const CreditxDashboard = () => {
                   >
                     <div className="calendor_wrapper">
                       <div className="week_selector_wrapper d-flex justify-content-between align-items-center">
-                        <div>
+                        <div
+                          onClick={handlePrevWeek}
+                          style={{ cursor: "pointer" }}
+                        >
                           <LeftOutlined
                             style={{
                               width: 24,
@@ -267,8 +292,13 @@ const CreditxDashboard = () => {
                             }}
                           />
                         </div>
-                        <div className="weeks">MAR 2024</div>
-                        <div>
+                        <div className="weeks">
+                          {startDate.format("MMM YY")}
+                        </div>
+                        <div
+                          onClick={handleNextWeek}
+                          style={{ cursor: "pointer" }}
+                        >
                           <RightOutlined
                             style={{
                               width: 24,
@@ -280,34 +310,20 @@ const CreditxDashboard = () => {
                         </div>
                       </div>
                       <div className="weekdays d-flex justify-content-between">
-                        <div className="days">
-                          <div className="day">MON</div>
-                          <div className="date">18</div>
-                        </div>
-                        <div className="days">
-                          <div className="day">TUE</div>
-                          <div className="date">19</div>
-                        </div>
-                        <div className="days">
-                          <div className="day">WED</div>
-                          <div className="date">20</div>
-                        </div>
-                        <div className="days">
-                          <div className="day">THU</div>
-                          <div className="date">21</div>
-                        </div>
-                        <div className="days active_day">
-                          <div className="day">FRI</div>
-                          <div className="date">22</div>
-                        </div>
-                        <div className="days">
-                          <div className="day">SAT</div>
-                          <div className="date">23</div>
-                        </div>
-                        <div className="days">
-                          <div className="day">SUN</div>
-                          <div className="date">24</div>
-                        </div>
+                        {daysOfWeek.map((day) => (
+                          <div
+                            key={day.format("YYYY-MM-DD")}
+                            className={`${
+                              currentDate.format("YYYY-MM-DD") ===
+                              day.format("YYYY-MM-DD")
+                                ? "active_day"
+                                : "days"
+                            }`}
+                          >
+                            <div className="day">{day.format("ddd")}</div>
+                            <div className="date">{day.format("DD")}</div>
+                          </div>
+                        ))}
                       </div>
                     </div>
                     <div className="activity_card_list_items">

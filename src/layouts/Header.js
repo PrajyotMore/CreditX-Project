@@ -5,7 +5,7 @@ import { BellOutlined, SearchOutlined, DownOutlined } from "@ant-design/icons";
 import { Input, Menu, Modal } from "antd";
 import { Link, Route, Routes, useNavigate } from "react-router-dom";
 import SdWidget from "../pages/widget/Sdwidget";
-import logocreditX from "../../src/assets/Group 427318814.svg"
+import logocreditX from "../../src/assets/Group 427318814.svg";
 //modal1 component
 function Modal1({ children, shown, close }) {
   return shown ? (
@@ -24,7 +24,6 @@ function Modal1({ children, shown, close }) {
 }
 
 const Header = ({ callback }) => {
-
   // const navigate = useNavigate();
   const [showLogo, setShowLogo] = useState(true);
   const [selectedLanguage, setSelectedLanguage] = useState("EN");
@@ -76,10 +75,10 @@ const Header = ({ callback }) => {
                   className="brand_logo"
                   src={logocreditX}
                   alt="CreditX Logo"
-                 // onClick={navigateLogo}
+                  // onClick={navigateLogo}
                 />
               </Link>
-            )} 
+            )}
           </div>
           <div
             className="profile_wrapper"
@@ -90,7 +89,7 @@ const Header = ({ callback }) => {
             //   gap: "16px",
             // }}
           >
-           {/* <div className="position-relative d-flex align-items-center">
+            {/* <div className="position-relative d-flex align-items-center">
               {showSearch ? (
                 <Input className="search_inputbox" placeholder="Search" />
               ) : null}
@@ -223,7 +222,7 @@ const Header = ({ callback }) => {
           </div>
           <div className="menuBody">
             <div className="logoutContainer">
-              <button>view all </button>
+              <button>view all</button>
             </div>
           </div>
         </div>

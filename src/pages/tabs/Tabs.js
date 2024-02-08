@@ -125,7 +125,7 @@ const TabsComp = ({ tabMenu, header, activeKey, handler, showBreadCrum }) => {
   return (
     <>
       {/* {width > breakpoint ? ( */}
-      
+
       <div className="header-img mainTabsStyle d-none d-md-block">
         <div className="container">
           <div className="">
@@ -161,14 +161,13 @@ const TabsComp = ({ tabMenu, header, activeKey, handler, showBreadCrum }) => {
                     <UserAddOutlined style={{ color: "#fff" }} /> Allocate To
                   </div>
                 </button> */}
-                
               </div>
             </div>
           </div>
         </div>
       </div>
       {/* ) : ( */}
-     
+
       <div
         className="tabsStyleMob d-md-none d-block mb-3"
         style={{
@@ -185,15 +184,16 @@ const TabsComp = ({ tabMenu, header, activeKey, handler, showBreadCrum }) => {
           size="small"
           activeKey={activeKey}
           style={{
-            // backgroundColor: "red",
-            boxShadow: "0px 1px 10px 0px #0000003d",
+            display: "flex",
+            flexDirection: "column",
+            // marginTop: 5,
           }}
         >
           {tabPane}
         </Tabs>
         {/* </div> */}
       </div>
-      
+
       {/* )} */}
     </>
   );

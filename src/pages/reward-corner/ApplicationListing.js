@@ -7,10 +7,10 @@ import { FileDoneOutlined, MoreOutlined } from "@ant-design/icons";
 import { Button, Col, Pagination, Progress, Row } from "antd";
 import "./ApplicationListing.css";
 const itemRender = (_, type, originalElement) => {
-  if (type === 'prev') {
+  if (type === "prev") {
     return <a>Previous</a>;
   }
-  if (type === 'next') {
+  if (type === "next") {
     return <a>Next</a>;
   }
   return originalElement;
@@ -45,12 +45,12 @@ const MasterContest = () => {
     <>
       {/* {activeKey === "1" ? ( */}
       <TabsComp
-      tabMenu={tabMenu}
-      // onTabClick={TabonChange}
-      activeKey="all"
-      header="Contest"
-      showBreadCrum={true}
-    />
+        tabMenu={tabMenu}
+        // onTabClick={TabonChange}
+        activeKey="all"
+        header="Contest"
+        showBreadCrum={true}
+      />
       <div className="container">
         <Row gutter={[16, { xs: 16, sm: 10, md: 16, lg: 16 }]}>
           {Array(8)
@@ -83,58 +83,66 @@ const MasterContest = () => {
                       <MoreOutlined />
                     </div>
                   </div>
-                  <Row gutter={[16, { xs: 16, sm: 10, md: 16, lg: 16 }]}>
                   <div className="application-info">
-                    <Col xs={12} sm={12} md={24} lg={12} xl={12}>
-                      <div className="col1">
-                        <div>
-                          <div className="title1">20,00,000</div>
-                          <div className="title2">Loan Amount</div>
+                    <Row gutter={[16, { xs: 16, sm: 10, md: 16, lg: 16 }]} style={{width:'100%'}}>
+                      <Col xs={12} sm={12} md={8} lg={8} xl={8}>
+                        <div className="col1">
+                          <div>
+                            <div className="title1">20,00,000</div>
+                            <div className="title2">Loan Amount</div>
+                          </div>
                         </div>
-
-                        <div>
-                          <div className="title1">45012</div>
-                          <div className="title2">EMI</div>
-                        </div>
-                      </div>
-                    </Col>
-                    <Col xs={12} sm={12} md={24} lg={12} xl={12}>
+                      </Col>
+                      <Col xs={12} sm={12} md={8} lg={8} xl={8}>
                       <div className="col1">
                         <div>
                           <div className="title1">12 Months</div>
                           <div className="title2">Tenure</div>
                         </div>
-
-                        <div>
-                          <div className="title1">Dadar</div>
-                          <div className="title2">Location</div>
-                        </div>
                       </div>
                     </Col>
-                    <Col xs={12} sm={12} md={24} lg={12} xl={12}>
-                      <div className="col1">
-                        <div>
-                          <div className="title1">Home Loan</div>
-                          <div className="title2">Purpose of Loan</div>
-                        </div>
+                    <Col xs={12} sm={12} md={8} lg={8} xl={8}>
+                        <div className="col1">
+                          <div>
+                            <div className="title1">Home Loan</div>
+                            <div className="title2">Purpose of Loan</div>
+                          </div>
 
-                        <div>
-                          <div className="title1">12/06/24</div>
-                          <div className="title2">Application Date</div>
+                          
                         </div>
-                      </div>
-                    </Col>
+                      </Col>
+                      <Col xs={12} sm={12} md={8} lg={8} xl={8}>
+                      <div>
+                            <div className="title1">45012</div>
+                            <div className="title2">EMI</div>
+                          </div>
+                      </Col>
+                     
+                      <Col xs={12} sm={12} md={8} lg={8} xl={8}>
+                      <div>
+                            <div className="title1">Dadar</div>
+                            <div className="title2">Location</div>
+                          </div>
+                      </Col>
+                      
+                      <Col xs={12} sm={12} md={8} lg={8} xl={8}>
+                      <div>
+                            <div className="title1">12/06/24</div>
+                            <div className="title2">Application Date</div>
+                          </div>
+                      </Col>
+                    </Row>
                   </div>
-                  
-                  </Row>
                   <Button className="button">Update</Button>
                 </div>
               </Col>
             ))}
         </Row>
         <div className="pagination">
-        <div className="pagination-info">Showing 8 Out of 244 Applications</div>
-        <Pagination className="pages" total={23} itemRender={itemRender} />
+          <div className="pagination-info">
+            Showing 8 Out of 244 Applications
+          </div>
+          <Pagination className="pages" total={23} itemRender={itemRender} />
         </div>
       </div>
       {/* ) : activeKey === "2" ? ( */}

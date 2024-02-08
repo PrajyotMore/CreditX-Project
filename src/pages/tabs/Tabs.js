@@ -125,13 +125,7 @@ const TabsComp = ({ tabMenu, header, activeKey, handler, showBreadCrum }) => {
   return (
     <>
       {/* {width > breakpoint ? ( */}
-      <Row gutter={[16, { xs: 16, sm: 10, md: 16, lg: 16 }]} >
       
-      <Col xs={24}
-      sm={24}
-      md={24}
-      lg={24}
-      xl={24}>
       <div className="header-img mainTabsStyle d-none d-md-block">
         <div className="container">
           <div className="">
@@ -173,19 +167,14 @@ const TabsComp = ({ tabMenu, header, activeKey, handler, showBreadCrum }) => {
           </div>
         </div>
       </div>
-      </Col>
       {/* ) : ( */}
-      <Col xs={24}
-      sm={24}
-      md={24}
-      lg={16}
-      xl={16}>
+     
       <div
         className="tabsStyleMob d-md-none d-block mb-3"
         style={{
           display: "flex",
           flexDirection: "column",
-          // marginTop: 5,
+          marginTop: -14,
         }}
       >
         {/* <div className="mb-3"> */}
@@ -204,8 +193,7 @@ const TabsComp = ({ tabMenu, header, activeKey, handler, showBreadCrum }) => {
         </Tabs>
         {/* </div> */}
       </div>
-      </Col>
-      </Row>
+      
       {/* )} */}
     </>
   );

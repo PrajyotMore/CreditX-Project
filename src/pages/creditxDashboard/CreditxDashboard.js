@@ -29,12 +29,14 @@ const CreditxDashboard = () => {
     daysOfWeek.push(day);
   }
 
+  // Add 7 days to move to the next week
   const handleNextWeek = () => {
-    setStartDate(moment(startDate).add(7, "days")); // Add 7 days to move to the next week
+    setStartDate(moment(startDate).add(7, "days"));
   };
 
+  // Subtract 7 days to move to the previous week
   const handlePrevWeek = () => {
-    setStartDate(moment(startDate).subtract(7, "days")); // Subtract 7 days to move to the previous week
+    setStartDate(moment(startDate).subtract(7, "days"));
   };
 
   return (

@@ -5,9 +5,9 @@ const Footer = () => {
     <footer
       style={{
         textAlign: "center",
-        background: "#000",
+        background: "#E0E7F3",
         padding: "0 16px",
-        color: "#fff",
+        color: "#003399",        
       }}
     >
       Powered by SalesDrives<sup>TM</sup>

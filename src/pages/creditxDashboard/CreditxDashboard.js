@@ -1,24 +1,32 @@
-import React, { useEffect, useState } from "react";
-import { Button, Card, Col, DatePicker, Row } from "antd";
+import { Button, Card, Col, DatePicker, FloatButton, Row, Tooltip } from "antd";
+import React, { useState } from "react";
 import "./creditxDashboard.css";
 import SdWidgetCom from "../widget/SdWidgetCom";
 import note from "../../assets/image/note.png";
 import size from "../../assets/image/size.png";
-import user from "../../assets/image/profile-2user.png";
+import user from "../../assets/image/customer icon.png";
 import questions from "../../assets/image/message-question.png";
 import tasksquare from "../../assets/image/task-square.png";
 import noteFav from "../../assets/image/note-favorite.png";
 import resource from "../../assets/image/task-square.png";
 import TodoListItem from "../creditxComponents/TodoListItem/TodoListItem";
-import moment from "moment";
+import addSquare from "../../assets/image/add-square.png"
+import tickSquare from "../../assets/image/tick-square.png"
 import {
+  CalculatorOutlined,
   CalendarOutlined,
+  CheckSquareOutlined,
+  CloseOutlined,
   LeftOutlined,
+  PlusCircleOutlined,
+  PlusSquareOutlined,
   RightOutlined,
 } from "@ant-design/icons";
+import close from "../../assets/image/1.png";
 const CreditxDashboard = () => {
-  const [currentDate, setCurrentDate] = useState(moment());
+  const [flaotbtn, setFloatBtn] = useState(false);
 
+<<<<<<< Updated upstream
   const [startDate, setStartDate] = useState(moment().startOf("week"));
 
   // Create an array to hold the days of the week
@@ -37,8 +45,32 @@ const CreditxDashboard = () => {
   // Subtract 7 days to move to the previous week
   const handlePrevWeek = () => {
     setStartDate(moment(startDate).subtract(7, "days"));
+=======
+  const onFloat = () => {
+    setFloatBtn(!flaotbtn);
   };
-
+  const openCloseToolTip = () => {
+    return (
+      <div className="tooltips">
+        <div className="menu">
+          {" "}
+          <img src={addSquare} style={{ fontSize: "26px" }} />
+          Add New Application
+        </div>
+        <div className="menu">
+          {" "}
+          <img src={tickSquare} style={{ fontSize: "26px" }} />
+          Check Eligibility
+        </div>
+        <div className="menu">
+          {" "}
+          <CalculatorOutlined style={{ fontSize: "26px" }} />
+          EMI Calculator
+        </div>
+      </div>
+    );
+>>>>>>> Stashed changes
+  };
   return (
     <>
       <div className="top_header_dashboard">
@@ -67,7 +99,6 @@ const CreditxDashboard = () => {
                   title_header="Loan Application"
                   count={220}
                   headerImgSrc={note}
-                  toRoute="/application-listing"
                 >
                   <div
                     className="claims_body hScroll "
@@ -109,31 +140,66 @@ const CreditxDashboard = () => {
                   title_header="Collection"
                   headerImgSrc={size}
                 >
-                  <div
-                    className="claims_body hScroll"
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      flexDirection: "column",
-                      alignItems: "center",
-                      gap: "8px",
-                    }}
-                  >
-                    <Row className="row w-100 text-center text-primary">
-                      <Col span={8} className="claim_count border-right">
-                        <div className="number_count">550</div>
-                        <div>All</div>
-                      </Col>
-                      <Col span={8} className="claim_count border-right">
-                        <div className="number_count">350</div>
-                        <div>In 3 Days</div>
-                      </Col>
-                      <Col span={8} className="claim_count">
-                        <div className="number_count">200</div>
-                        <div>Overdue</div>
-                      </Col>
-                    </Row>
+                <div
+                className="claims_body hScroll query_card"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  gap: "8px",
+                }}
+              >
+                <Row className="row w-100 text-center text-primary">
+                  <Col span={8} className="claim_count border-right">
+                    <div className="number_count">550</div>
+                    <div>All</div>
+                  </Col>
+                  <Col span={8} className="claim_count border-right">
+                    <div className="number_count1">350</div>
+                    <div style={{color:'#FF8A00'}}>In 3 days</div>
+                  </Col>
+                  <Col span={8} className="claim_count">
+                  <div className="number_count2">200</div>
+                  <div style={{color:'#E34234'}}>Overdue</div>
+                </Col>
+                </Row>
+                <div className="list_item_wrap">
+                  <div className="list_item border-bottom">
+                    <div className="list_text">
+                    Collection for Application ID ID5987754365 is due in next 3 Days.
+                    </div>
+                    <button className="view_button">VIEW</button>
                   </div>
+                  <div className="list_item border-bottom">
+                    <div className="list_text">
+                    Collection for Application ID ID5987754365 is due in next 3 Days.
+                    </div>
+                    <button className="view_button">VIEW</button>
+                  </div>
+                  <div className="list_item border-bottom">
+                    <div className="list_text">
+                    Collection for Application ID ID5987754365 is due in next 3 Days.
+                    </div>
+                    <button className="view_button">VIEW</button>
+                  </div>
+                  <div className="list_item border-bottom">
+                    <div className="list_text">
+                    Collection for Application ID ID5987754365 is due in next 3 Days.
+                    </div>
+                    <button className="view_button">VIEW</button>
+                  </div>
+                  <div className="list_item  ">
+                    <div className="list_text">
+                    Collection for Application ID ID5987754365 is due in next 3 Days.
+                    </div>
+                    <button className="view_button">VIEW</button>
+                  </div>
+                </div>
+                <div className="view_all">
+                  <button className="view_all_button">VIEW ALL</button>
+                </div>
+              </div>
                 </SdWidgetCom>
               </Col>
               <Col className="col_widget">
@@ -281,10 +347,7 @@ const CreditxDashboard = () => {
                   >
                     <div className="calendor_wrapper">
                       <div className="week_selector_wrapper d-flex justify-content-between align-items-center">
-                        <div
-                          onClick={handlePrevWeek}
-                          style={{ cursor: "pointer" }}
-                        >
+                        <div>
                           <LeftOutlined
                             style={{
                               width: 24,
@@ -294,13 +357,8 @@ const CreditxDashboard = () => {
                             }}
                           />
                         </div>
-                        <div className="weeks">
-                          {startDate.format("MMM YY")}
-                        </div>
-                        <div
-                          onClick={handleNextWeek}
-                          style={{ cursor: "pointer" }}
-                        >
+                        <div className="weeks">MAR 2024</div>
+                        <div>
                           <RightOutlined
                             style={{
                               width: 24,
@@ -312,20 +370,34 @@ const CreditxDashboard = () => {
                         </div>
                       </div>
                       <div className="weekdays d-flex justify-content-between">
-                        {daysOfWeek.map((day) => (
-                          <div
-                            key={day.format("YYYY-MM-DD")}
-                            className={`${
-                              currentDate.format("YYYY-MM-DD") ===
-                              day.format("YYYY-MM-DD")
-                                ? "active_day"
-                                : "days"
-                            }`}
-                          >
-                            <div className="day">{day.format("ddd")}</div>
-                            <div className="date">{day.format("DD")}</div>
-                          </div>
-                        ))}
+                        <div className="days">
+                          <div className="day">MON</div>
+                          <div className="date">18</div>
+                        </div>
+                        <div className="days">
+                          <div className="day">TUE</div>
+                          <div className="date">19</div>
+                        </div>
+                        <div className="days">
+                          <div className="day">WED</div>
+                          <div className="date">20</div>
+                        </div>
+                        <div className="days">
+                          <div className="day">THU</div>
+                          <div className="date">21</div>
+                        </div>
+                        <div className="days active_day">
+                          <div className="day">FRI</div>
+                          <div className="date">22</div>
+                        </div>
+                        <div className="days">
+                          <div className="day">SAT</div>
+                          <div className="date">23</div>
+                        </div>
+                        <div className="days">
+                          <div className="day">SUN</div>
+                          <div className="date">24</div>
+                        </div>
                       </div>
                     </div>
                     <div className="activity_card_list_items">
@@ -673,6 +745,17 @@ const CreditxDashboard = () => {
                     </Row>
                   </div>
                 </SdWidgetCom>
+              </Col>
+            </Row>
+            <Row>
+              <Col className="floatbtn closeoutline ">
+                <Tooltip title={openCloseToolTip} placement="top">
+                <FloatButton
+                  icon={<CloseOutlined />}
+                  // tooltip={openCloseToolTip}
+                  onClick={onFloat}
+                />
+                </Tooltip>
               </Col>
             </Row>
           </div>

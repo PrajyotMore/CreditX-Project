@@ -129,7 +129,7 @@ const Header = ({ callback }) => {
               className="divider"
               style={{
                 width: "1px",
-                borderRight: "1px solid rgba(255, 255, 255, 0.20)",
+                // borderRight: "1px solid #003399",
                 height: "34px",
               }}
             ></div>
@@ -141,7 +141,7 @@ const Header = ({ callback }) => {
               >
                 <BellOutlined
                   onClick={showNotificationModal}
-                  style={{ fontSize: "25px", color: "#fff", cursor: "pointer" }}
+                  style={{ fontSize: "25px", color: "#003399", cursor: "pointer" }}
                 />
               </div>
             ) : null}
@@ -149,7 +149,7 @@ const Header = ({ callback }) => {
               className="divider"
               style={{
                 width: "1px",
-                borderRight: "1px solid rgba(255, 255, 255, 0.20)",
+                borderRight: "1px solid #D2E1FF",
                 height: "34px",
               }}
             ></div>
@@ -172,7 +172,7 @@ const Header = ({ callback }) => {
                   <div className="text-wrapper">Rajat Mishra</div>
                   <div className="div">Agent ID: 1234567890</div>
                 </div>
-                <DownOutlined className="chevron-down" />
+                <DownOutlined className="chevron-down" style={{color: "#003399"}} />
               </div>
             </div>
           </div>

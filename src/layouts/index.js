@@ -4,12 +4,14 @@ import { FileOutlined, UserOutlined, CloseOutlined } from "@ant-design/icons";
 import { useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import { useNavigate } from "react-router-dom";
 const { Sider, Content } = Layout;
 
 const AppLayout = ({ children }) => {
   const [open, setOpen] = useState(false);
   const [width, setWidth] = useState(window.innerWidth);
-
+  const navigate = useNavigate();
+  const currentPath = window.location.pathname;
   useEffect(() => {
     const handleWindowResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleWindowResize);
@@ -21,8 +23,18 @@ const AppLayout = ({ children }) => {
     setOpen(!open);
   };
 
+  const pathsWithoutHeaderFooter = ["/"];
+
+  // Check if the current path is in the list
+  const hideHeaderFooter = pathsWithoutHeaderFooter.includes(currentPath);
+
+  if (hideHeaderFooter) {
+    return <>{children}</>;
+  }
+  
+
   return (
-    <Layout className="layout" style={{ minHeight: "100vh" }}>
+    <Layout className="layout" >
       <Drawer
         // width={250}
         width={width > 576 ? 300 : "70%"}

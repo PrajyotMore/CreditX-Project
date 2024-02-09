@@ -11,7 +11,7 @@
   }
   /* Remove the border from the top of the tabs */
 .mainTabsStyle2 .ant-tabs-top > .ant-tabs-nav::before {
-    display: none;
+    /* display: none; */
   }
 
 /* tabs background */

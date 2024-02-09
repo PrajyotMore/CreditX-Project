@@ -3,6 +3,7 @@ import { ExportOutlined } from "@ant-design/icons";
 import "./sdwidgetcom.css";
 import { Link, Route } from "react-router-dom";
 // import Hscroll from "./Hscroll";
+import exportoutlined from "../../assets/image/Group 427318820.png"
 
 const SdWidgetCom = ({
   backgroundColorToDo,
@@ -23,7 +24,7 @@ const SdWidgetCom = ({
         }}
       >
         <Link
-          to={toRoute ? String(toRoute) : "#"}
+          to="/Application-Listing"
           className="text-muted w-100"
           style={{ padding: "0 16px" }}
         >
@@ -58,7 +59,7 @@ const SdWidgetCom = ({
               <img className="launch1Icon2" alt="" src="/launch-1.svg" />
             </div>
             <div>
-              <ExportOutlined style={{ color: "#003399" }} />
+              <img src={exportoutlined} />
             </div>
           </div>
         </Link>

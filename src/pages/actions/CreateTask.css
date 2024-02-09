@@ -28,7 +28,7 @@
     width: 100%;
   } */
   .ant-input{
-    border: none;
+    /* border: none; */
     border-bottom: 1px solid #ccc;
   }
   .ant-input:hover, .ant-input:focus{

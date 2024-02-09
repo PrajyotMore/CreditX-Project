@@ -62,6 +62,10 @@ const ApplicationListing = React.lazy(() =>
   import("./pages/reward-corner/ApplicationListing")
 );
 
+const LoanApplication = React.lazy(() =>
+  import("./pages/loanApplication/LoanApplication")
+);
+
 function App() {
   return (
     <AppLayout>
@@ -113,6 +117,12 @@ function App() {
             <Route
               path="/application-listing"
               element={<ApplicationListing />}
+            />
+          </Routes>
+          <Routes>
+            <Route
+              path="/Application-Listing/Application"
+              element={<LoanApplication />}
             />
           </Routes>
           <Routes>

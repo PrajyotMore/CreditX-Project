@@ -34,7 +34,7 @@ const AppLayout = ({ children }) => {
   
 
   return (
-    <Layout className="layout" >
+    <Layout className="layout" style={{minHeight:'100vh'}}>
       <Drawer
         // width={250}
         width={width > 576 ? 300 : "70%"}

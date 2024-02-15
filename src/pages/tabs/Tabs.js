@@ -176,7 +176,7 @@ const TabsComp = ({ tabMenu, header, activeKey, handler, showBreadCrum }) => {
       {/* {width > breakpoint ? ( */}
 
       <div className="header-img mainTabsStyle d-none d-md-block">
-        <div className="container">
+        <div className="">
       
       <div className="header-img mainTabsStyle">
         <div className="container top_container">

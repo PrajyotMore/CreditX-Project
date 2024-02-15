@@ -115,7 +115,7 @@ function App() {
           </Routes>
           <Routes>
             <Route
-              path="/application-listing"
+              path="/Application-Listing"
               element={<ApplicationListing />}
             />
           </Routes>

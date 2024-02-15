@@ -9,19 +9,35 @@
 }
 
 .full-width-content {
-    margin-bottom: 40px;
-    max-height: auto;
-    overflow-y: auto;
+  margin-bottom: 40px;
+  /* height: 1620px; */
+  /* overflow-y: auto; */
   background-color: #fff;
 }
-.full-width-content::-webkit-scrollbar {
-    width: 0; /* Remove scrollbar width */
-    height: 0; /* Remove scrollbar height */
-  }
+/* .full-width-content::-webkit-scrollbar {
+    width: 0; 
+    height: 0;
+  } */
 
 .loancontainer {
+  /* display: flex;
+  flex-direction: column; */
+  /* min-height: auto !important; */
   padding: 16px;
 }
+/* 
+.basicdetailsform {
+  height: 1480px;
+}
+.existingloandetailsform {
+  height: 80vh;
+}
+.entitydetailsform {
+  height: 1020px;
+}
+.bankdetailform {
+  height: 400px;
+} */
 
 .loandetailstitle {
   font-size: 18px;
@@ -33,7 +49,7 @@
 }
 
 .loandetail {
-  height: 290px;
+  /* height: 290px; */
   gap: 16px;
 }
 .loantitle {
@@ -46,63 +62,100 @@
   /* padding-top: 32px; */
   padding-bottom: 16px;
 }
-.currentprogress{
-font-size: 10px;
+.currentprogress {
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #6d92d1;
+}
+.verifywrapperinfo {
+  padding: 0px;
+  display: flex;
+  align-items: center;
+}
+.verificationwrapper {
+  display: flex;
+  flex-direction: row;
+  width: 246px;
+  justify-content: flex-start;
+  align-content: center;
+  text-align: center;
+  gap: 6px;
+}
+.infowrapper {
+  display: flex;
+  flex-direction: row;
+  width: 417px;
+  /* height: 44px; */
+  gap: 6px;
+  align-items: center;
+  vertical-align: middle;
+  line-height: normal;
+}
+.uploaded-image {
+  width: 60px;
+  height: 35px;
+  border-radius: 4px;
+  border: 1px;
+}
+.filename{
+font-size: 14px;
 font-weight: 600;
+line-height: 19px;
+letter-spacing: 0.15000000596046448px;
+text-align: left;
+color: #003399;
+}
+.clicktoview{
+font-size: 10px;
+font-weight: 400;
 line-height: 14px;
 letter-spacing: 0em;
 text-align: left;
-color: #6D92D1;
+color: #737373;
 
 }
-.verifywrapperinfo{
-    display: flex;
-    align-items: center;
-    
+.uploadtextwrapper{
+  margin-right: 5rem;
 }
-.verificationwrapper{
-    display: flex;
-    flex-direction: row;
-    width: 246px;
-    justify-content: flex-start;
-    align-content:  center;
-    text-align: center;
-    gap: 6px;
+.remove-icon{
+  /* width: 16px;
+  height: 16px; */
+  font-size: 16px;
+  color: #003399;
+  /* top: 4px;
+  left: 4px; */
+  border: 2px;
+  }
+.shareverification {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #22bb33;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.infowrapper{
-    display: flex;
-    flex-direction: row;
-    width: 417px;
-    height: 44px;
-    gap: 6px;
+.infotitleverification {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #444444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.shareverification{
-font-size: 16px;
-font-weight: 600;
-line-height: 22px;
-letter-spacing: 0em;
-text-align: left;
-color: #22BB33;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-.infotitleverification{
-font-size: 12px;
-font-weight: 400;
-line-height: 16px;
-letter-spacing: 0.5px;
-text-align: left;
-color: #444444;
-display: flex;
-justify-content: center;
-align-items: center;
-}
-.uploaddata .ant-btn{
-    width: 417px;
-    height: 55px;
-    text-align: left;
-    padding: 10px 16px 10px 16px;
+.uploaddata .ant-btn {
+  width: 362px;
+  height: 55px;
+  text-align: left;
+  padding: 10px 16px 10px 16px;
 }
 
 .typeloan {
@@ -154,22 +207,21 @@ align-items: center;
   color: #9b959f;
 }
 
-.cancel{
-    width:  96px;
-height: 42px;
-padding: 10px 22px 10px 22px;
-border-radius: 8px;
-border: 1px;
-gap: 8px;
-color: #003399 ;
-border: 1px solid #003399;
-box-shadow: 0px 2px 12px 0px #00339929;
-
+.cancel {
+  width: 96px;
+  height: 42px;
+  padding: 10px 22px 10px 22px;
+  border-radius: 8px;
+  border: 1px;
+  gap: 8px;
+  color: #003399;
+  border: 1px solid #003399;
+  box-shadow: 0px 2px 12px 0px #00339929;
 }
 
 .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
-    border-color: #003399;
-    background-color: #003399;
+  border-color: #003399;
+  background-color: #003399;
 }
 
 .savebtn {
@@ -182,67 +234,100 @@ box-shadow: 0px 2px 12px 0px #00339929;
   background-color: #003399;
   box-shadow: 0px 2px 12px 0px #00339952;
   color: #fff;
-
 }
 
+.permanentaddress {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #28b1ff;
+}
+.locatemap {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #22bb33;
+  cursor: pointer;
+}
 
-.permanentaddress{
-font-size: 16px;
-font-weight: 600;
-line-height: 22px;
+.addcoapplicantbtn {
+  width: 165px;
+  height: 36px;
+  padding: 8px 14px 8px 14px;
+  border-radius: 6px;
+  border: 1px;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #003399;
+  border: 1px solid #003399;
+  box-shadow: 0px 2px 6px 0px #3b371e1f;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+.uploadbtn .ant-btn-icon {
+  width: 24.44px;
+  height: 20px;
+}
+.uploadbtn {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0.15000000596046448px;
+  text-align: left;
+  color: #003399;
+}
+
+.lastsixmonthtext{
+font-size: 12px;
+font-style: italic;
+font-weight: 400;
+line-height: 16px;
 letter-spacing: 0.5px;
 text-align: left;
-color: #28B1FF;
-}
-.locatemap{
-font-size: 16px;
-font-weight: 600;
-line-height: 22px;
-letter-spacing: 0em;
-text-align: left;
-color: #22BB33;
-cursor: pointer;
+color: #9B959F;
 }
 
-.addcoapplicantbtn{
-width: 165px;
-height: 36px;
-padding: 8px 14px 8px 14px;
-border-radius: 6px;
-border: 1px;
-gap: 8px;
-background-color: #FFFFFF;
-color: #003399;
-border: 1px solid #003399;
-box-shadow: 0px 2px 6px 0px #3B371E1F;
-display: flex;
-justify-content: center; /* Center horizontally */
-align-items: center; /* Center vertically */
-
+.documentuploadtable .ant-table-thead > tr {
+  background-color: #d2e1ff;
+  /* width: 1284px; */
+  /* height: 35px; */
+  /* padding: 8px 24px 8px 24px; */
+  /* gap: 40px; */
 }
-.uploadbtn 
-.ant-btn-icon {
-    width: 24.44px;
-    height: 20px;
+.ant-table-wrapper
+  .ant-table.ant-table-bordered
+  > .ant-table-container
+  > .ant-table-content
+  > table
+  > thead
+  > tr
+  > th {
+  /* border-inline-end: none; */
 }
-.uploadbtn{
-font-size: 14px;
-font-weight: 600;
-line-height: 19px;
-letter-spacing: 0.15000000596046448px;
-text-align: left;
-color: #003399;
-
+.ant-table-wrapper
+  .ant-table.ant-table-bordered
+  > .ant-table-container
+  > .ant-table-content
+  > table
+  > tbody
+  > tr
+  > td {
+  /* border-inline-end: none; */
 }
 
-.filetypetitle{
-font-size: 10px;
-font-weight: 400;
-line-height: 14px;
-letter-spacing: 0em;
-text-align: left;
-padding-left: 30px;
-color: #737373;
+.filetypetitle {
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-left: 30px;
+  color: #737373;
 }
 
 /* .verifytext{
@@ -255,3 +340,174 @@ display: flex;
 justify-content: center;
 align-items: center;
 } */
+.ant-modal .ant-modal-title {
+  color: #003399;
+  background: #ebeff7;
+}
+
+.ant-modal .ant-modal-footer {
+  display: flex;
+  justify-content: end;
+  background: #fff;
+}
+/* .ant-modal-footer .ant-btn {
+  width: 178px;
+height: 42px;
+padding: 10px 22px 10px 22px;
+border-radius: 8px;
+border: 1px;
+gap: 8px;
+background-color: #003399;
+color: #fff;
+border: 1px solid #003399;
+box-shadow: 0px 2px 12px 0px #00339952;
+
+
+} */
+
+.ant-modal .ant-modal-close {
+  color: #003399;
+}
+
+.input-text-verify {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  color: #22bb33;
+  cursor: pointer;
+}
+
+.otpWrapper {
+  padding: 0px 24px;
+}
+.otpcibilwrapper {
+  width: 600px;
+  /* height: 305px; */
+  padding: 0px 16px;
+}
+
+.enterOtp .input-otp__field {
+  width: 126.5px;
+  height: 60px;
+  gap: 12px;
+  padding: 0px 12px;
+  border-radius: 8px;
+  border: 1px solid #d8d8d8;
+  max-width: 100px;
+}
+
+.enterOtp .input-otp {
+  justify-content: flex-start;
+}
+
+.cibilotp .input-otp__field {
+  width: 82px;
+  height: 60px;
+  gap: 12px;
+  padding: 0px 12px;
+  border-radius: 8px;
+  border: 1px solid #d8d8d8;
+  max-width: 100px;
+}
+
+.cibilmodal .ant-modal .ant-modal-content {
+  width: 600px;
+}
+.otplabel .ant-form-item .ant-form-item-label > label {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding: 0px, 12px;
+  color: #003399;
+}
+
+.emailtextotp {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #444444;
+}
+
+.resendotp {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #28b1ff;
+}
+
+.sixdigitotp {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #003399;
+}
+
+.resendText {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #003399;
+}
+
+.success{
+font-size: 24px;
+font-weight: 600;
+line-height: 33px;
+letter-spacing: 0px;
+text-align: center;
+color: #0EB415;
+}
+
+.loansuccesstext{
+font-size: 16px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0px;
+text-align: center;
+color: #003399;
+}
+
+.eval{
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0px;
+text-align: center;
+color: #444444;
+margin-bottom: 10px;
+}
+
+.estimatetime{
+font-size: 14px;
+font-weight: 400;
+line-height: 20px;
+letter-spacing: 0px;
+text-align: center;
+color: #9B959F;
+margin-bottom: 16px;
+}
+
+.applicationlisting{
+width: 248px;
+height: 42px;
+padding: 10px 22px 10px 22px;
+border-radius: 8px;
+border: 1px;
+gap: 8px;
+color: #fff;
+background-color: #003399;
+border: 1px solid #003399;
+box-shadow: 0px 2px 12px 0px #00339952;
+}

@@ -25,6 +25,7 @@ import {
 import { useState } from "react";
 import maps from "../../assets/image/map.png";
 import { InputOTP } from "antd-input-otp";
+import UploadComponent from "./UploadComponent";
 
 const BasicDetails = () => {
   const [isChecked, setIsChecked] = useState(true);
@@ -94,65 +95,71 @@ const BasicDetails = () => {
   //     />
   //   </div>
   // );
-  const [aadharFrontFile, setAadhardharFrontFile] = useState(null);
-  const [aadharFrontFileimageUrl, setAadharFrontFileImageUrl] = useState(null);
-  const [aadharBackFile, setAadhardharBackFile] = useState(null);
-  const [aadharBackFileimageUrl, setAadharBackFileImageUrl] = useState(null);
-  console.log("file", aadharFrontFile);
-  const handleAadharFrontUpload = (info) => {
-    const { file } = info;
-    if (!file) return;
+  // const [aadharFrontFile, setAadhardharFrontFile] = useState(null);
+  // const [aadharFrontFileimageUrl, setAadharFrontFileImageUrl] = useState(null);
+  // const [aadharBackFile, setAadhardharBackFile] = useState(null);
+  // const [aadharBackFileimageUrl, setAadharBackFileImageUrl] = useState(null);
+  // const [uploadProgress, setUploadProgress] = useState(0);
 
-    // Check file type and size
-    if (!["image/jpeg", "image/png", "application/pdf"].includes(file.type)) {
-      message.error("Only .pdf, .jpg, .png allowed.");
-      return false;
-    }
-    if (file.size > 5 * 1024 * 1024) {
-      message.error("File size must be less than 5MB.");
-      return false;
-    }
+ 
+  // const handleAadharFrontUpload = (info) => {
+  //   const { file } = info;
+  //   if (!file) return;
+  
+  //   // Simulate upload progress (replace with actual upload logic)
+  //   let progress = 0;
+  //   const interval = setInterval(() => {
+  //     progress = progress + 10;
+  //     if (progress >= 100) {
+  //       clearInterval(interval);
+  //       setUploadProgress(0); // Reset progress for next upload
+  //     } else {
+  //       setUploadProgress(progress);
+  //     }
+  //   }, 500);
+  
+  //   // Read file as data URL
+  //   const reader = new FileReader();
+  //   reader.onloadend = () => {
+  //     setAadhardharFrontFile(file);
+  //     setAadharFrontFileImageUrl(reader.result);
+  //   };
+  //   reader.readAsDataURL(file);
+  // };
+  
+  // const handleAadharBackUpload = (info) => {
+  //   const { file } = info;
+  //   if (!file) return;
+  
+  //   // Simulate upload progress (replace with actual upload logic)
+  //   let progress = 0;
+  //   const interval = setInterval(() => {
+  //     progress = progress + 10;
+  //     if (progress >= 100) {
+  //       clearInterval(interval);
+  //       setUploadProgress(0); // Reset progress for next upload
+  //     } else {
+  //       setUploadProgress(progress);
+  //     }
+  //   }, 500);
+  
+  //   // Read file as data URL
+  //   const reader = new FileReader();
+  //   reader.onloadend = () => {
+  //     setAadhardharBackFile(file);
+  //     setAadharBackFileImageUrl(reader.result);
+  //   };
+  //   reader.readAsDataURL(file);
+  // };
+// const handleAdharFrontRemove = () => {
+//   setAadhardharFrontFile(null);
+//   setAadharFrontFileImageUrl(null);
+// };
 
-    // Read file as data URL
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setAadhardharFrontFile(file);
-      setAadharFrontFileImageUrl(reader.result);
-    };
-    reader.readAsDataURL(file);
-  };
-  const handleAadharBackUpload = (info) => {
-    console.log(info)
-    const { file } = info;
-    if (!file) return;
-
-    // Check file type and size
-    if (!["image/jpeg", "image/png", "application/pdf"].includes(file.type)) {
-      message.error("Only .pdf, .jpg, .png allowed.");
-      return false;
-    }
-    if (file.size > 5 * 1024 * 1024) {
-      message.error("File size must be less than 5MB.");
-      return false;
-    }
-
-    // Read file as data URL
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      setAadhardharBackFile(file);
-      setAadharBackFileImageUrl(reader.result);
-    };
-    reader.readAsDataURL(file);
-  };
-
-  const handleAdharFrontRemove = () => {
-    setAadhardharFrontFile(null);
-    setAadharFrontFileImageUrl(null);
-  };
-  const handleAdharBackRemove = () => {
-    setAadhardharBackFile(null);
-    setAadharBackFileImageUrl(null);
-  };
+// const handleAdharBackRemove = () => {
+//   setAadhardharBackFile(null);
+//   setAadharBackFileImageUrl(null);
+// };
 
   return (
     <Row gutter={[16, { xs: 16, sm: 10, md: 16, lg: 16 }]}>
@@ -312,112 +319,8 @@ const BasicDetails = () => {
                 </div>
               </div>
             </Col>
-            <Col xs={24} sm={24} md={8} lg={8} xl={8}>
-              <Form.Item
-                name="aadharcardfront"
-                label="Aadhar Card Front"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please enter adhar card front",
-                  },
-                ]}
-                className="uploaddata"
-              >
-                <Upload
-                  onChange={handleAadharFrontUpload}
-                  showUploadList={false}
-                  beforeUpload={() => false} // Prevent default upload behavior
-                >
-                  <Button
-                    icon={aadharFrontFile ? null : <UploadOutlined />}
-                    className="uploadbtn"
-                  >
-                    {aadharFrontFile ? (
-                      <div className="d-flex justify-content-between">
-                        <div>
-                          <img
-                            src={aadharFrontFileimageUrl}
-                            alt="Uploaded"
-                            className="uploaded-image"
-                          />
-                        </div>
-                        <div className="d-flex">
-                        <div className="uploadtextwrapper">
-                          <div className="filename">{aadharFrontFile.name}</div>
-                          <div className="clicktoview">Click to view</div>
-                          </div>
-                          <CloseOutlined
-                            onClick={handleAdharFrontRemove}
-                            className="remove-icon"
-                          />
-                        </div>
-                      </div>
-                    ) : (
-                      <>
-                        Upload Aadhar Front
-                        <p className="filetypetitle">
-                          Only .pdf, .jpg allowed. File limit is 5MB
-                        </p>
-                      </>
-                    )}
-                  </Button>
-                </Upload>
-              </Form.Item>
-            </Col>
-            <Col xs={24} sm={24} md={24} lg={8} xl={8}>
-              <Form.Item
-                name="aadharcardback"
-                label="Aadhar Card Back"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please enter adhar card back",
-                  },
-                ]}
-                className="uploaddata"
-              >
-              <Upload
-              onChange={handleAadharBackUpload}
-              showUploadList={false}
-              beforeUpload={() => false} // Prevent default upload behavior
-            >
-              <Button
-                icon={aadharBackFile ? null : <UploadOutlined />}
-                className="uploadbtn"
-              >
-                {aadharBackFile ? (
-                  <div className="d-flex justify-content-between">
-                    <div>
-                      <img
-                        src={aadharBackFileimageUrl}
-                        alt="Uploaded"
-                        className="uploaded-image"
-                      />
-                    </div>
-                    <div className="d-flex">
-                    <div className="uploadtextwrapper">
-                      <div className="filename">{aadharBackFile.name}</div>
-                      <div className="clicktoview">Click to view</div>
-                      </div>
-                      <CloseOutlined
-                        onClick={handleAdharBackRemove}
-                        className="remove-icon"
-                      />
-                    </div>
-                  </div>
-                ) : (
-                  <>
-                    Upload Aadhar Back
-                    <p className="filetypetitle">
-                      Only .pdf, .jpg allowed. File limit is 5MB
-                    </p>
-                  </>
-                )}
-              </Button>
-            </Upload>
-              </Form.Item>
-            </Col>
+            <UploadComponent label="Aadhar Front"/>
+            <UploadComponent label="Aadhar Back"/>
             <Col xs={24} sm={24} md={24} lg={34} xl={24}></Col>
             <Col xs={24} sm={24} md={12} lg={8} xl={8}>
               <Form.Item
@@ -453,28 +356,7 @@ const BasicDetails = () => {
                 </div>
               </div>
             </Col>
-            <Col xs={24} sm={24} md={24} lg={24} xl={24}>
-              <Form.Item
-                name="pancard"
-                label="PAN Card "
-                rules={[
-                  {
-                    required: true,
-                    message: "Please enter pan card",
-                  },
-                ]}
-                className="uploaddata"
-              >
-                <Upload>
-                  <Button icon={<UploadOutlined />} className="uploadbtn">
-                    Upload PAN{" "}
-                    <p className="filetypetitle">
-                      Only .pdf, .jpg allowed. File limit is 5MB
-                    </p>
-                  </Button>
-                </Upload>
-              </Form.Item>
-            </Col>
+            <UploadComponent label="PAN"/>
 
             <Col xs={24} sm={24} md={24} lg={24} xl={24}>
               <div className="d-flex justify-content-between">

@@ -79,30 +79,18 @@ const ExistingLoanDetails = () => {
                 <Input type="number"  size="large" disabled />
               </Form.Item>
             </Col>
-            <Col xs={24} sm={24} md={24} lg={6} xl={6}>
-              <Form.Item
-                name="consumercreditreport"
-                label=""
-                rules={[
-                  {
-                    required: false,
-                    message: "consumer credit report",
-                  },
-                ]}
-                style={{ width: "250px" }}
-                className="uploaddata"
-              >
+            <Col xs={24} sm={24} md={24} lg={8} xl={8} className="uploaddata">
                 <Upload>
                   <Button
                     icon={<UploadOutlined />}
                     className="uploadbtn"
+                    style={{marginTop:'15px'}}
                     disabled
                   >
                     Consumer Credit Report
                     <p className="filetypetitle">Click to View / Download</p>
                   </Button>
                 </Upload>
-              </Form.Item>
             </Col>
 
             <Col xs={24} sm={24} md={24} lg={24} xl={24}>
